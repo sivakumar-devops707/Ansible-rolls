@@ -1,0 +1,9 @@
+- name: Install npm packages
+  community.general.npm:
+    path: /app
+    state: present 
+
+- name: Copy service file to remote server
+  ansible.builtin.copy:
+      src: "{{ component }}.service.j2"     # Path on your Ansible control node
+      dest: /etc/systemd/system/{{ component }}.service 

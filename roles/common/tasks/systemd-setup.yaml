@@ -4,6 +4,6 @@
     state: present 
 
 - name: Copy service file to remote server
-  ansible.builtin.copy:
+  ansible.builtin.template:
       src: "{{ component }}.service.j2"     # Path on your Ansible control node
       dest: /etc/systemd/system/{{ component }}.service 

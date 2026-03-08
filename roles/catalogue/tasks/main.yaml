@@ -21,9 +21,9 @@
 
 
 - name: Copy service file to remote server
-  ansible.builtin.copy:
+  ansible.builtin.templates:
       src: mongodb.repo     # Path on your Ansible control node
-      dest: /etc/yum.repos.d/mongo.repo
+      dest: /etc/yum.repos.d/mongodb.repo
 
 
 - name: install mongodb client
